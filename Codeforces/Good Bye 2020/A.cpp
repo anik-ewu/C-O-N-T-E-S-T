@@ -11,23 +11,29 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
+int arr[sz];
 
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
+    int a,b,c, l,r,i,j,k, t,n,m;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        for(i=1; i<=n; i++)cin>>arr[i];
+
+        set< double > st;
+
+        for(i=1; i<=n; i++){
+            for(j=i+1; j<=n; j++){
+                double base=arr[j]-arr[i];
+                double area=(1.0*base)/2.0;
+               st.insert(area);
+            }
+        }
+        cout<<st.size()<<endl;
+        st.clear();
+
     }
-    else
-        solve();
 
     return 0;
 }

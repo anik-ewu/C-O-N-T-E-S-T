@@ -11,23 +11,13 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
-
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
-    }
-    else
-        solve();
+    int a,b,c, i,j,k, t,n,m;
+
+
+
+
 
     return 0;
 }

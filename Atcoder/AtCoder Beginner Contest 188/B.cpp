@@ -11,23 +11,26 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
+double arr[sz];
+double brr[sz];
 
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
+    int a,b,c, i,j,k, t,n,m;
+
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>arr[i]>>brr[i];
     }
-    else
-        solve();
+    int cnt=0;
+
+    for(i=1; i<n; i++){
+        for(j=i+1; j<=n; j++){
+            double slope=(brr[j]-brr[i])/(arr[j]-arr[i]);
+            if(slope>=-1 and slope<=1)cnt++;
+        }
+    }
+    cout<<cnt<<endl;
 
     return 0;
 }

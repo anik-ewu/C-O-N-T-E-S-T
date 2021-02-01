@@ -11,23 +11,33 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
+string s;
+vector < string > vs;
+map < string, int > mp;
 
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
+    int a,b,c, i,j,k, t,n,m;
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>s;
+        if(s[0]=='!'){
+            s.erase(s.begin()+0);
+            vs.push_back(s);
+        }
+        else {
+            mp[s]=1;
+        }
     }
-    else
-        solve();
+    for(i=0; i<vs.size(); i++){
+        if(mp[vs[i]]){
+            cout<<vs[i]<<endl;
+            return 0;
+        }
+    }
+    cout<<"satisfiable"<<endl;
+
+
 
     return 0;
 }

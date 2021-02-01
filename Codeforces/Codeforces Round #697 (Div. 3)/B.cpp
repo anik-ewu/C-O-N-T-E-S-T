@@ -13,14 +13,21 @@ const ll inf = 1e9;
 
 void solve(){
 
-    int a,b, n,m, i,j;
-
+    int n, i;
+    cin>>n;
+    for(i=0; i<=n; i+=2020){
+        if((n-i)%2021==0){
+            cout<<"YES"<<endl;
+            return ;
+        }
+    }
+    cout<<"NO"<<endl;
 }
 
 int main(){
     Fast;///using Fast I/O
     int multitest=1;
-    if(multipletest){
+    if(multitest){
         int tc;
         cin>>tc;
         while(tc--)

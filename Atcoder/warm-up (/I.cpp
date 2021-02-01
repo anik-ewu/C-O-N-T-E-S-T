@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 const ll inf = 1e9;
 
-#define mod             1e9+7
+#define mod             1000000007
 #define what_is(x)      cerr<<#x<<" is "<<x<<"\n";
 #define read(x)         freopen("in.txt","r",stdin);
 #define write(x)        freopen("out.txt","w",stdout);
@@ -11,23 +11,26 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
-
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
+    ll a,b,c, i,j,k, t,n,m;
+
+    vector< ll > v;
+    cin>>n;
+    for(i=1; i<=sqrt(n); i++){
+        if(n%i==0)v.push_back(i);
+        if(n%i==0 && i!=(n/i))v.push_back((n/i));
     }
-    else
-        solve();
+    sort(v.begin(), v.end());
+    for(i=0; i<v.size(); i++){
+        cout<<v[i]<<endl;
+    }
+
+
+
+
+
+
 
     return 0;
 }

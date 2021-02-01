@@ -11,16 +11,33 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
+map < ll, int > mp;
+
+void pre(){
+    ll i=2;
+    while(i<=1e14){
+        mp[i]=1;
+        i=i*2;
+    }
+}
+
 void solve(){
 
-    int a,b, n,m, i,j;
-
+    ll a,b, n,m, i,j;
+    cin>>n;
+    if(mp[n]){
+        cout<<"NO"<<endl;
+    }
+    else{
+        cout<<"YES"<<endl;
+    }
 }
 
 int main(){
     Fast;///using Fast I/O
+    pre();
     int multitest=1;
-    if(multipletest){
+    if(multitest){
         int tc;
         cin>>tc;
         while(tc--)

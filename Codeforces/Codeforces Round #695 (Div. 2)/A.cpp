@@ -11,15 +11,37 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
+int arr[sz];
+
 void solve(){
 
-    int a,b, n,m, i,j;
+    int n, m, i, j, k;
+    cin>>n;
+    if(n){
+        cout<<9;
+        n--;
+    }
 
+    if(n){
+        cout<<8;
+        n--;
+    }
+
+    if(n){
+        cout<<9;
+        n--;
+    }
+    k=0;
+    for(i=1; i<=n; i++){
+        cout<<k++;
+        if(k>=10)k=0;
+    }
+    cout<<endl;
 }
 
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
+    int multipletest=1;
     if(multipletest){
         int tc;
         cin>>tc;
@@ -28,6 +50,7 @@ int main(){
     }
     else
         solve();
+
 
     return 0;
 }

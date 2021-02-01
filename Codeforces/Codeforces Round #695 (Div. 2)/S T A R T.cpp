@@ -13,13 +13,12 @@ const ll inf = 1e9;
 
 void solve(){
 
-    int a,b, n,m, i,j;
 
 }
 
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
+    int multipletest=1;
     if(multipletest){
         int tc;
         cin>>tc;
@@ -28,6 +27,7 @@ int main(){
     }
     else
         solve();
+
 
     return 0;
 }

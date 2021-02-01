@@ -11,23 +11,23 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
-
-    int a,b, n,m, i,j;
-
-}
-
 int main(){
     Fast;///using Fast I/O
-    int multitest=1;
-    if(multipletest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
+    int a,b,c, i,j,k, t,n,m;
+
+    cin>>a>>b;
+    n=0;
+    while(a){
+        n+=a%10;
+        a/=10;
     }
-    else
-        solve();
+    m=0;
+    while(b){
+        m+=b%10;
+        b/=10;
+    }
+    cout<<max(n,m)<<endl;
+
 
     return 0;
 }
