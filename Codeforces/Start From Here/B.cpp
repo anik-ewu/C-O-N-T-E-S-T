@@ -20,7 +20,7 @@ void solve(){
 int main(){
     Fast;///using Fast I/O
     int multitest=1;
-    if(multipletest){
+    if(multitest){
         int tc;
         cin>>tc;
         while(tc--)

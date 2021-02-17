@@ -14,15 +14,31 @@ const ll inf = 1e9;
 void solve(){
 
     int a,b, n,m, i,j;
+    vector < int > v;
+    vector < ll > cum;
+    vector < pair<int , int >  > q;
+
+    ll sum=0;
+    ll mx=0;
+
+    scanf("%d%d", &n, &m);
+    for(i=1; i<=n; i++){
+        scanf("%d", &a);
+        sum+=a;
+        mx=max(mx, sum);
+        v.push_back(a);
+        cum.push_back(a);
+    }
 
 }
 
 int main(){
-    Fast;///using Fast I/O
+    ///Fast;///using Fast I/O
     int multitest=1;
     if(multitest){
         int tc;
-        cin>>tc;
+        ///cin>>tc;
+        scanf("%d",&tc);
         while(tc--)
             solve();
     }

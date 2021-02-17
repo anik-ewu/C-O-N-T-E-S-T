@@ -11,9 +11,30 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
+map< int , int > fre;
+map< int , int > ffre;
+
+
 void solve(){
 
     int a,b, n,m, i,j;
+    cin>>n;
+    fre.clear();
+    ffre.clear();
+    for(i=1; i<=n; i++){
+        cin>>a;
+        fre[a]++;
+        ffre[fre[a]]++;
+    }
+
+    vector< pair<int , int > > vp;
+    int res=n-1;
+    m=n;
+    for(i=n; i>=1; i--){
+        int temp= n-(ffre[i]*i);
+        res=min(res, temp);
+    }
+    cout<<res<<endl;
 
 }
 

@@ -11,9 +11,24 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
+int arr[101];
+
 void solve(){
 
     int a,b, n,m, i,j;
+    int mn=101;
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>arr[i];
+        mn=min(mn,arr[i]);
+    }
+    int cnt=0;
+    for(i=1; i<=n; i++){
+        cnt+=(mn!=arr[i]);
+    }
+
+    cout<<cnt<<endl;
+
 
 }
 

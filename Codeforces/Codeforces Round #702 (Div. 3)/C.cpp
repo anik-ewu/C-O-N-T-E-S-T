@@ -11,9 +11,33 @@ const ll inf = 1e9;
 
 #define sz              3000005
 
-void solve(){
+const ll K=1e12;
+map< ll, int > mp;
 
-    int a,b, n,m, i,j;
+void pre(){
+    for(ll i=1; i*i*i<=K; i++){
+        mp[i*i*i]=1;
+    }
+}
+
+void solve(){
+    pre();
+    ll a,b, n,m, i,j;
+    cin>>n;
+
+    bool ok=false;
+    for(i=1; n-(i*i*i)>=1; i++){
+        if(mp[n-(i*i*i)]){
+            ok=true;
+            break;
+        }
+    }
+    if(ok){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
 
 }
 

@@ -13,7 +13,26 @@ const ll inf = 1e9;
 
 void solve(){
 
-    int a,b, n,m, i,j;
+    int a,b,c, n,m,k, i,j;
+    cin>>n>>k;
+
+    int posA, posB;
+
+    posA=n-(k%n)-1;
+
+    if(k<n){
+        posB=((k)+(k*2<=n))%n;
+    }
+    else{
+        m=k%n;
+        c=((k/n)*2)%n;
+        c=(c+m)%n;
+        posB=c;
+        if(posB>=posA)posB++;
+    }
+    posB=posB%n;
+    posB=max(posB, 1);
+    cout<<posB<<endl;
 
 }
 
