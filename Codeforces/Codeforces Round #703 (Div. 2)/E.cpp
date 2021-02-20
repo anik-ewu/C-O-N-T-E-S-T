@@ -19,12 +19,6 @@ void solve(){
 
 int main(){
     Fast;///using Fast I/O
-    
-    read(x);
-    write(x);
-
-
-    freopen("out.txt","w",stdout);
     int multitest=1;
     if(multitest){
         int tc;

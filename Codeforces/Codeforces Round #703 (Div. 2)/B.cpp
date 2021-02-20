@@ -13,19 +13,42 @@ const ll inf = 1e9;
 
 void solve(){
 
-    int a,b, n,m, i,j;
+    int a,b, n, l, r, mid, idx;
+
+    cin>>n;
+    l=1; r=n;
+    while(r-l>1){
+
+        mid=(l+r)/2;
+        
+
+
+
+
+        cout<<'?'<<' '<<l<<' '<<r<<endl;
+        fflush(stdout);
+        cin>>idx;
+
+        if(idx==r){
+
+        }
+
+        cout<<'?'<<' '<<l<<' '<<r<<endl;
+        
+
+
+
+
+
+    }
+
+
 
 }
 
 int main(){
     Fast;///using Fast I/O
-    
-    read(x);
-    write(x);
-
-
-    freopen("out.txt","w",stdout);
-    int multitest=1;
+    int multitest=0;
     if(multitest){
         int tc;
         cin>>tc;

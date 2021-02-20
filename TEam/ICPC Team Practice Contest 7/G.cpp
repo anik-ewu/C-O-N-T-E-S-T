@@ -22,7 +22,7 @@ void solve(){
             q.push({i,j});
         }
     }
-    ///cin>>n>>m;
+	
     while(!q.empty()){
         n=q.front().first;
         m=q.front().second;
@@ -59,18 +59,7 @@ void solve(){
 int main(){
     Fast;///using Fast I/O
 
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
-    
-    int multitest=1;
-    if(multitest){
-        int tc;
-        cin>>tc;
-        while(tc--)
-            solve();
-    }
-    else
-        solve();
+    solve();
 
     return 0;
 }
