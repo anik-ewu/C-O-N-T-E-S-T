@@ -13,7 +13,7 @@ const ll inf = 1e9;
 
 void solve(){
 
-    ll a,b, n,m, i,j, k;
+    ll a,b, n,m, i,j, k,l;
 
     ll cnt=0;
     cin>>n;
