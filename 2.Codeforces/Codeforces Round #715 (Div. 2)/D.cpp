@@ -3,45 +3,46 @@ using namespace std;
 
 #define Fast            ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
-string res;
 vector< string > v;
-
-bool check(string s, string p, int n){
-    int j=0;
-    for(int i=0; i<s.size(); i++){
-        if(j==p.size()){
-            res=s;
-            return true;
-        }
-        if(s[i]==p[j])j++;
-    }
-    int rem=p.size()-j;
-    if(rem<=n){
-        while(j<p.size())s+=p[j++];
-        res=s;
-        return true;
-    }
-    return false;
-
-}
 
 void solve(int n){
 
-    for(int i=1; i<=3; i++){
-        for(int j=1; j<=3; j++){
-            if(i==j)continue;
-            if(check(v[i], v[j], n)){
-                i=4;
-                break;
-            }
-            if(check(v[j], v[i], n)){
-                i=4;
-                break;
-            }
-
+    string s="";
+    int i=0, j=0, k=0;
+    while(i<n and j<n and k<n){
+        if(v[0][i]==v[1][j]){
+            s+=v[0][i];
+            i++;j++;
+        }
+        else if(v[0][i]==v[2][k]){
+            s+=v[0][i];
+            i++;
+            k++;
+        }
+        else{
+            s+=v[1][j];
+            j++;
+            k++;
         }
     }
-    cout<<res<<endl;
+    priority_queue< pair< int , char > > pq;
+    pq.push({i, 'i'});
+    pq.push({j, 'j'});
+    pq.push({k, 'k'});
+
+    pq.pop();
+    if(pq.top().second=='i'){
+        while(i<n)s+=v[0][i++];
+    }
+    else if(pq.top().second=='j'){
+        while(j<n)s+=v[1][j++];
+    }
+    else{
+        while(k<n)s+=v[2][k++];
+    }
+
+    cout<<s<<endl;
+
 }
 
 int main(){
@@ -53,12 +54,11 @@ int main(){
     for(int i=1; i<=t; i++){
         cin>>n;
         v.clear();
-        v.push_back("##");
         for(int j=1; j<=3; j++){
             cin>>s;
             v.push_back(s);
         }
-        solve(n);
+        solve(n*2);
     }
     return 0;
 }
