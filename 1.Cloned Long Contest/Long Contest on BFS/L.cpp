@@ -1,7 +1,8 @@
 /*
-Date: 16-4-2021
+Date: 18-4-2021
 Algo: BFS
-IDEA: Find the distance of each node from the 0th node.
+IDEA: Find connected component, sort their values in decreasing.
+      we can use two priority, queue to optimize sorting.
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -36,7 +37,7 @@ void BFS(int src){
         int num=val.top();
         index.pop();
         val.pop();
-        arr[idx]=val;
+        arr[idx]=num;
     }
 }
 
@@ -45,16 +46,16 @@ int main(){
     int t, n, m, a, b;
 
     cin>>n>>m;
-    for(int i=1; i<=n; i++)adj[i].clear();
+    for(int i=1; i<=n; i++)cin>>arr[i];
     for(int i=1; i <=m; i++){
         cin>>a>>b;
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
 
-    BFS();
     for(int i=1; i<=n; i++)if(vis[i]==0)BFS(i);
     for(int i=1; i<=n; i++)cout<<arr[i]<<' ';
+     cout<<endl;
     return 0;
 
 }
