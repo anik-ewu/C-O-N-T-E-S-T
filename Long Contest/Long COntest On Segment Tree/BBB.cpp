@@ -14,6 +14,7 @@ struct node combine(node a, node b){
 void build(int at, int l, int r){
     if(l==r){
         tree[at]={0,0,1};
+        lazy[at]=0;
         return;
     }
     int mid=(l+r)/2;
@@ -25,28 +26,29 @@ void move(int at){
     swap(tree[at].one,tree[at].thr);
     swap(tree[at].two,tree[at].thr);
 }
-void propagate(int at){
+void propagate(int at, int l, int r){
     while(lazy[at]){
         move(at);
-        lazy[at*2]++;
-        lazy[at*2+1]++;
+        if(l!=r){
+            lazy[at*2]++;
+            lazy[at*2+1]++;
+        }
         lazy[at]--;
     }
 }
 void update(int at, int l, int r){
     lazy[at]=lazy[at]%3;
-    ///propagate(at,l,r);
+    propagate(at,l,r);
     if(R<l || r<L)return;
 
     if(L<=l && r<=R){
         move(at);
-//        if(l!=r){
-//            lazy[at*2]++;
-//            lazy[at*2+1]++;
-//        }
+        if(l!=r){
+            lazy[at*2]++;
+            lazy[at*2+1]++;
+        }
         return;
     }
-    propagate(at);
     int mid=(l+r)/2;
     update(at*2,l,mid);
     update(at*2+1,mid+1,r);
@@ -55,12 +57,11 @@ void update(int at, int l, int r){
 
 int query(int at, int l, int r){
     lazy[at]=lazy[at]%3;
-    propagate(at);
+    propagate(at,l,r);
     if(R<l || r<L)return 0;
     if(L<=l && r<=R){
         return tree[at].thr;
     }
-    ///propagate(at);
     int mid=(l+r)/2;
     return (query(at*2,l,mid)+query(at*2+1,mid+1,r));///sum
 }
