@@ -17,7 +17,7 @@ int win[N];
 int lose[N];
 int trie[N][26];
 
-void init(){ 
+void init(){
 	sz=1;
 	memset(trie, -1, sizeof(trie));
 }
@@ -42,7 +42,7 @@ void dfs(int curr){
 		if(next!=-1){
 			leaf=0;
 			dfs(next);
-			///game theory 
+			///game theory
 			win[curr]|=!win[next];
 			lose[curr]|=!lose[next];
 		}
