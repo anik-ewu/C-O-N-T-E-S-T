@@ -15,7 +15,16 @@ int main(){
     cin>>t;
     while(t--){
 
+        cin>>n;
+        int mn = INT_MAX;
+        int mx = 0;
 
+        for(int i=1; i<=n; i++){
+            cin>>a;
+            mn = min(a, mn);
+            mx = max(a, mx);
+        }
+        cout<<mx-mn<<endl;
 
 
     }

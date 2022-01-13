@@ -11,9 +11,33 @@ const int N= 1e5+5;
 
 int main(){
 
-    int a, b, t=1, n , m;
+    int a, b, c, t=1, n , m;
     cin>>t;
     while(t--){
+
+            cin>>a>>b>>c;
+
+            bool ok = false;
+
+            if(a==max(a, max(b,c))){
+                if(abs(a-c)%b==0) ok = true;
+                if(abs(b-(a-b))%c==0) ok = true;
+            }
+            else if(b==max(a, max(b,c))){
+                if((b+(b-a))%c==0) ok = true;
+                if((b+(b-c))%a==0) ok = true;
+            }
+            else{
+                if(abs(c-a)%b==0) ok = true;
+                if(abs(c-(c-b))%a==0) ok = true;
+            }
+
+            if(ok){
+                cout<<"YES"<<endl;
+            }
+            else{
+                cout<<"NO"<<endl;
+            }
 
 
 
