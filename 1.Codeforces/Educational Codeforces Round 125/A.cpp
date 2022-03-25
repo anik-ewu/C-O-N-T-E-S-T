@@ -9,15 +9,29 @@ const ll           inf = 1e9;
 
 const int N= 1e5+5;
 
+int countMinimumOperationRequired(int x, int y) {
+
+    if(!x and !y)
+        return 0;
+
+    double dis = (x*x)+(y*y);
+    int v = sqrt(dis);
+    if(v*v == dis)
+        return 1;
+    else
+        return 2;
+}
+
 int main(){
+
+    Fast;
 
     int a, b, t=1, n , m;
     cin>>t;
     while(t--){
 
-
-
-
+        cin>>a>>b;
+        cout<<countMinimumOperationRequired(a, b)<<endl;
     }
 
     return 0;

@@ -11,12 +11,12 @@ const int N= 1e5+5;
 
 int main(){
 
-    int a, b, t=1, n , m;
+    int x, a, b, t=1, n , m;
     cin>>t;
     while(t--){
 
-
-
+        cin>>x>>a>>b;
+        cout<<(a+(100-x)*b)*10<<endl;
 
     }
 

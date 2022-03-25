@@ -11,12 +11,21 @@ const int N= 1e5+5;
 
 int main(){
 
-    int a, b, t=1, n , m;
+    int a, b, x, y, d, t=1, n , m;
     cin>>t;
     while(t--){
 
+        cin>>a>>b>>x>>y>>d;
 
-
+        a = a/x;
+        b = b/y;
+        int c = min(a, b);
+        if(c >= d) {
+            cout<<"YES"<<endl;
+        }
+        else {
+            cout<<"NO"<<endl;
+        }
 
     }
 

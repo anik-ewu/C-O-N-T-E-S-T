@@ -11,14 +11,23 @@ const int N= 1e5+5;
 
 int main(){
 
-    int a, b, t=1, n , m;
-    cin>>t;
-    while(t--){
+    int base;
+    string s, p;
+    cin>>base>>s>>p;
 
+    reverse(s.begin(), s.end());
+    reverse(p.begin(), p.end());
 
+    ll x = 0 , y = 0;
 
-
+    for(int i = 0; i<s.size(); i++) {
+        x += ( powl(base, i) * 1LL * (s[i]-'0') );
     }
+    for(int i = 0; i<p.size(); i++) {
+        y += ( powl(base, i) * 1LL * (p[i]-'0') );
+    }
+    cout<<(x*1LL*y)<<endl;
+
 
     return 0;
 }

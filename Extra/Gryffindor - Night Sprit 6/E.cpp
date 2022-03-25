@@ -11,14 +11,24 @@ const int N= 1e5+5;
 
 int main(){
 
-    int a, b, t=1, n , m;
+    int a, b, t=1, n , m, k, x;
     cin>>t;
     while(t--){
 
+        cin>>n>>x>>k;
 
-
+        if(x%k == 0 || ((n+1)-x)%k == 0) {
+            cout<<"YES"<<endl;
+        }
+        else {
+            cout<<"NO"<<endl;
+        }
 
     }
 
     return 0;
 }
+
+
+
+

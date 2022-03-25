@@ -9,16 +9,32 @@ const ll           inf = 1e9;
 
 const int N= 1e5+5;
 
+int arr[N];
+
 int main(){
 
     int a, b, t=1, n , m;
     cin>>t;
     while(t--){
 
+        cin>>n;
+        for(int i=1; i<=n; i++)
+            cin>>arr[i];
 
+        bool ok = false;
+        for(int i=1; i<n; i++){
+            if(arr[i]>arr[i+1])
+                ok= true;
+        }
+
+        if(ok)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
 
 
     }
 
     return 0;
 }
+
