@@ -14,7 +14,34 @@ int main(){
     int a, b, t=1, n , m;
     cin>>t;
     while(t--){
+        cin>>n>>m;
 
+        int arr[n+2][n+2];
+        memset(arr, 0, sizeof(arr));
+
+        for(int i=1; i<=m; i++) {
+            cin>>a>>b;
+            for(int j=1; j<=n; j++){
+                arr[a][j]++;
+            }
+            for(int j=1; j<=n; j++){
+                arr[j][b]++;
+            }
+        }
+
+        bool ok = false;
+        for(int i=1; i<=n; i++) {
+            for(int j=1; j<=n; j++) {
+                if(arr[i][j] <= 1) {
+                    ok = true;
+                }
+            }
+        }
+        if(ok) {
+            cout<<"YES"<<endl;
+        } else {
+            cout<<"NO"<<endl;
+        }
 
 
 
