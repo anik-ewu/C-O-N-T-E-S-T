@@ -11,13 +11,16 @@ const int N= 1e5+5;
 
 int main(){
 
-    double a, b, t=1, n , m;
+    int a, b, c, t=1, n , m;
     cin>>t;
     while(t--){
-        cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
+        vector<int>v;
+        cin>>a>>b>>c;
+        v.push_back(a);
+        v.push_back(b);
+        v.push_back(c);
+        sort(v.begin(), v.end());
+        cout<<v[1]<<endl;
 
     }
 

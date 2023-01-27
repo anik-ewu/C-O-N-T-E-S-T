@@ -9,15 +9,25 @@ const ll           inf = 1e9;
 
 const int N= 1e5+5;
 
+string pi = "314159265358979323846264338327";
+
 int main(){
 
+    string s;
     double a, b, t=1, n , m;
     cin>>t;
     while(t--){
-        cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
+        cin>>s;
+        int cnt = 0;
+        for(int i = 0; i < s.size(); i++) {
+            if(s[i] == pi[i]) {
+                cnt++;
+            }
+            else {
+                break;
+            }
+        }
+        cout<<cnt<<endl;
 
     }
 

@@ -9,16 +9,47 @@ const ll           inf = 1e9;
 
 const int N= 1e5+5;
 
+map<int, vector<vector<int> > > hashTable;
+
+void fourNumSum(vector<int>&array, int targetSum) {
+    int totalNumbers = array.size();
+    vector< vector<int> >qudarples;
+
+    for(int i=0; i<totalNumbers; i++) {
+        for(int j=i+1; j<totalNumbers; j++) {
+            int remaining = targetSum - (array[i] + array[j]);
+
+            if(hashTable.find(remaining) != hashTable.end()) {
+                for(auto pairs: hashTable[remaining]) {
+                    vector<int>qudarple {array[i], array[j]};
+                    for(int num: pairs) {
+                            qudarple.push_back(num);
+                    }
+                    qudarples.push_back(qudarple);
+                }
+            }
+        }
+        for(int j=0; j<i; j++) {
+            vector<int> makePair;
+            makePair.push_back(array[j]);
+            makePair.push_back(array[i]);
+            int pairSum = array[i] + array[j];
+
+            hashTable[pairSum].push_back(makePair);
+        }
+    }
+    for(auto x: qudarples) {
+        for(auto y: x) {
+            cout<<y<<' ';
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
 
-    int a, b, t=1, n , m;
-    cin>>t;
-    while(t--){
-
-
-
-
-    }
+    vector<int>data{7, 6, 4, -1, 1, 2};
+    fourNumSum(data, 16);
 
     return 0;
 }

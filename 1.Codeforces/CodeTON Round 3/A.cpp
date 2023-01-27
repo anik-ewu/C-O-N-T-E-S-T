@@ -11,13 +11,18 @@ const int N= 1e5+5;
 
 int main(){
 
-    double a, b, t=1, n , m;
+    int a, b, t=1, n , m;
     cin>>t;
     while(t--){
+
         cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
+        cin>>a;
+        for(int i=2; i<=n; i++) {
+            cin>>b;
+        }
+
+        (a==1) ? cout<<"Yes"<<endl : cout<<"No"<<endl;
+
 
     }
 

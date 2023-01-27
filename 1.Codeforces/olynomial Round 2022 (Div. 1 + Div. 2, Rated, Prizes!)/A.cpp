@@ -11,14 +11,24 @@ const int N= 1e5+5;
 
 int main(){
 
-    double a, b, t=1, n , m;
+    string s;
+    int a, b, t=1, n , m;
     cin>>t;
     while(t--){
-        cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
-
+        cin>>n>>s;
+        int cnt = 0;
+        cnt += (s[0]-'0');
+        for(int i=1; i<n; i++) {
+            cnt += (s[i]-'0');
+            if(cnt > 1 && s[i]=='1') {
+                cnt = 0;
+                cout<<'-';
+            }
+            else {
+                cout<<'+';
+            }
+        }
+        cout<<endl;
     }
 
     return 0;

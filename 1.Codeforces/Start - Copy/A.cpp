@@ -14,10 +14,6 @@ int main(){
     double a, b, t=1, n , m;
     cin>>t;
     while(t--){
-        cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
 
     }
 

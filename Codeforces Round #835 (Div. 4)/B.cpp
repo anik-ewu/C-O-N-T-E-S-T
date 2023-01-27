@@ -11,13 +11,20 @@ const int N= 1e5+5;
 
 int main(){
 
-    double a, b, t=1, n , m;
+    int a, b, t=1, n , m;
     cin>>t;
     while(t--){
-        cin>>n;
-        double temp = round(n/2.0);
-        int res = temp;
-        cout<<res<<endl;
+
+        string s;
+        cin>>n>>s;
+        int mx = 0;
+        for(int i=0; i<n; i++) {
+            mx = max(mx, s[i]-'a');
+        }
+        cout<<mx+1<<endl;
+
+
+
 
     }
 
