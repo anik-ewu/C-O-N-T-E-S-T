@@ -13,23 +13,32 @@ string pi = "314159265358979323846264338327";
 
 int main(){
 
-    string s;
-    double a, b, t=1, n , m;
-    cin>>t;
-    while(t--){
-        cin>>s;
-        int cnt = 0;
-        for(int i = 0; i < s.size(); i++) {
-            if(s[i] == pi[i]) {
-                cnt++;
-            }
-            else {
-                break;
-            }
-        }
-        cout<<cnt<<endl;
+    int arr[10][2] = {-1};
 
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout<<arr[i][j]<<' ';
+        }
+        cout<<endl;
     }
+
+    // string s;
+    // double a, b, t=1, n , m;
+    // cin>>t;
+    // while(t--){
+    //     cin>>s;
+    //     int cnt = 0;
+    //     for(int i = 0; i < s.size(); i++) {
+    //         if(s[i] == pi[i]) {
+    //             cnt++;
+    //         }
+    //         else {
+    //             break;
+    //         }
+    //     }
+    //     cout<<cnt<<endl;
+
+    // }
 
     return 0;
 }

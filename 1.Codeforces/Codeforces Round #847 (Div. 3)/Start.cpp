@@ -1,24 +1,83 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long  ll;
-const ll           inf = 1e9;
-#define read(x)     freopen("in.txt","r",stdin);
-#define write(x)    freopen("out.txt","w",stdout);
-#define what_is(x)  cerr<<#x<<" is "<<x<<"\n";
-#define Fast        ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
-const int N= 1e5+5;
+struct VersionInfo {
+    int a, b, c, d;
+    string title;
+};
+vector<VersionInfo> versionList;
+
+bool cmp(VersionInfo versoinA, VersionInfo versoinB) {
+    if(versoinA.a != versoinB.a) {
+        return versoinA.a < versoinB.a;
+    } else {
+        if(versoinA.b != versoinB.b) {
+            return versoinA.b < versoinB.b;
+        } else {
+            if(versoinA.c != versoinB.c) {
+                return versoinA.c < versoinB.c;
+            } else {
+                if(versoinA.d != versoinB.d) {
+                    return versoinA.d < versoinB.d;
+                } else {
+                    return versoinA.title < versoinB.title;
+                }
+            }
+        }
+    }
+}
+
+void breakVersionName(string version, string title) {
+    
+    for (int i = 0; i < version.size(); i++) {
+        if (version[i] == '.' || version[i] == '-') {
+            version[i] = ' ';
+        }
+    }
+
+    int num;
+    string word;
+    stringstream ss;
+    ss<<version;
+
+    VersionInfo data;
+    ss>>num;
+    data.a = num;
+    ss>>num;
+    data.b = num;
+    ss>>num;
+    data.c = num;
+    
+    data.d = 3;
+    ss>>word;
+
+    if(word == "alpha")
+        data.d = 1;
+    else if(word == "beta") 
+        data.d = 2;
+
+    data.title = title;
+
+    versionList.push_back(data);
+}
 
 int main(){
 
-    int a, b, t=1, n , m;
-    cin>>t;
-    while(t--){
-
-
-
-
+    int i = 0;
+    string title;
+    string versionName;
+    
+    while(cin>>versionName>>title) {
+        breakVersionName(versionName, title);
     }
 
+    //sorting the version list
+    sort(versionList.begin(), versionList.end(), cmp);
+
+    for (int i = 0; i < versionList.size(); i++) {
+        cout<<versionList[i].title<<' ';
+    }
+    cout<<endl;
+    
     return 0;
 }
