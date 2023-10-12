@@ -3,6 +3,7 @@ using namespace std;
 
 int main() {
 
+
     int n;
     bool possible = false;
     cin>>n;
